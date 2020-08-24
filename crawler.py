@@ -89,15 +89,16 @@ class STOCK(object):
             rowsize = ws.max_row
             for c in range(0, len(i['data'])):
                 if not(i['data'][c][0] in colDates):
-                    ws.cell(row=c+rowsize+1, column=1, value=i['data'][c][0])
-                    ws.cell(row=c+rowsize+1, column=2, value=i['data'][c][1])
-                    ws.cell(row=c+rowsize+1, column=3, value=i['data'][c][2])
-                    ws.cell(row=c+rowsize+1, column=4, value=i['data'][c][3])
-                    ws.cell(row=c+rowsize+1, column=5, value=i['data'][c][4])
-                    ws.cell(row=c+rowsize+1, column=6, value=i['data'][c][5])
-                    ws.cell(row=c+rowsize+1, column=7, value=i['data'][c][6])
-                    ws.cell(row=c+rowsize+1, column=8, value=i['data'][c][7])
-                    ws.cell(row=c+rowsize+1, column=9, value=i['data'][c][8])
+                    rowsize += 1
+                    ws.cell(row=rowsize, column=1, value=i['data'][c][0])
+                    ws.cell(row=rowsize, column=2, value=i['data'][c][1])
+                    ws.cell(row=rowsize, column=3, value=i['data'][c][2])
+                    ws.cell(row=rowsize, column=4, value=i['data'][c][3])
+                    ws.cell(row=rowsize, column=5, value=i['data'][c][4])
+                    ws.cell(row=rowsize, column=6, value=i['data'][c][5])
+                    ws.cell(row=rowsize, column=7, value=i['data'][c][6])
+                    ws.cell(row=rowsize, column=8, value=i['data'][c][7])
+                    ws.cell(row=rowsize, column=9, value=i['data'][c][8])
         wb.save(filename)
 
     def crawller(self, new=False, **kwargs):
